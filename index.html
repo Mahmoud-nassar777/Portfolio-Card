@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Card </title>
+    <link rel="stylesheet" href="css/Portfolio Card.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+</head>
+<body>
+
+
+    <div class="container">
+        <header>
+            <div class="info">
+                <div class="count">
+                    <i class="fa-solid fa-dollar-sign"></i>
+                    <p>140$</p>
+                </div>
+                <p>Course Price</p>
+            </div>
+            <div class="profile">
+                <img src="img/IMG-20231225-WA0050.jpg" alt="">
+            </div>
+            <div class="info">
+                <div class="count">
+                    <i class="fa-solid fa-user-graduate"></i>
+                    <p>1423</p>
+                </div>
+                <p>Student</p>
+            </div>
+        </header>
+
+
+        <div class="about">
+            <h2>Mahmoud Nassar <i class="fa-solid fa-circle-check"></i></h2>
+            <p>Frontend Developer & UI/UX Designer</p>
+        </div>
+        <div class="social-links">
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-github"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-solid fa-paperclip"></i></a>
+        </div>
+
+
+
+        <div class="tabs-container">
+            <ul class="tabs">
+                <li class="active">
+                    <a href="#about" class="active" id="tab-1" data-tab="tab-1"> About Me </a>
+                </li>
+                <li>
+                    <a href="#hire" id="tab-2" data-tab="tab-2"> Hire Me </a>
+                </li>
+                <li>
+                    <a href="#comments" id="tab-3" data-tab="tab-3"> Comments </a>
+                </li>
+            </ul>
+        </div>
+
+
+
+        <div class="tab-content active-tab-content" id="tab-1" >
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis obcaecati saepe numquam natus vel! Possimus, animi hic amet impedit quos, optio blanditiis, soluta similique ipsam suscipit nesciunt voluptatibus sint laudantium!</p>
+            <br>
+            <h3> How I Can Help You?🤔 </h3>
+            <div class="vote">
+                <a href="#"> HTML tips </a>
+                <a href="#"> CSS tips </a>
+                <a href="#"> JAVASCRIPT Tips </a>
+            </div>
+        </div>
+
+        <div class="tab-content" id="tab-2" >
+            <p>
+                Explore the latest in web development technologies and tools 
+            </p>
+            <div class="vote">
+                <a href="#">Programming basics</a>
+                <a href="#">HTML</a>
+                <a href="#">CSS</a>
+                <a href="#">JS</a>
+                <a href="#">Responsive</a>
+            </div>
+        </div>
+
+
+        <div class="tab-content" id="tab-3">
+            <p>Here are some of my students comments</p>
+            <div class="comments">
+                <div class="comment">
+                    <img src="img/WAIST-_1.gif" alt="">
+                </div>
+                <div>
+                    <h4>Wael</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, neque?</p>
+                </div>
+            </div>
+            <div class="comments">
+                <div class="comment">
+                    <img src="img/computer-code-canvas-black-yellow-binary-background-with-graphical-elements_896558-31857.jpg" alt="">
+                </div>
+                <div>
+                    <h4>Hema</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, neque?</p>
+                </div>
+            </div>
+            <div class="comments">
+                <div class="comment">
+                    <img src="img/handsome-young-man-isolated-background-pointing-side-present-product_1368-40896.jpg" alt="">
+                </div>
+                <div>
+                    <h4>Etsho</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, neque?</p>
+                </div>
+            </div>
+        </div>
+
+
+        <button>Hire Me</button>
+
+
+
+    </div>
+
+<script>
+    const alllinks  = document.querySelectorAll(".tabs a");
+const allTabs = document.querySelectorAll(".tab-content");
+
+alllinks.forEach(link => {
+    link.addEventListener('click', () => {
+        const linkId = link.getAttribute("data-tab");
+
+        // تفعيل الرابط الذي تم الضغط عليه
+        alllinks.forEach(l => l.classList.remove("active"));
+        link.classList.add("active");
+
+        // إظهار التبويب المطلوب وإخفاء الباقي
+        allTabs.forEach(tab => {
+            tab.classList.remove("active-tab-content");
+            if (tab.id === linkId) {
+                tab.classList.add("active-tab-content");
+            }
+        });
+    });
+});
+
+</script>
+
+
+
+    <script src="../js/Portfolio Card.js"></script>
+</body>
+</html>
